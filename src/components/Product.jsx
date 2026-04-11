@@ -1,11 +1,14 @@
+import React from 'react';
+import { ShoppingStoreContext } from '../store/shopping-store-context';
+
 export default function Product({
   id,
   image,
   title,
   price,
-  description,
-  onAddToCart,
+  description
 }) {
+  const { onAddToCart } = React.useContext(ShoppingStoreContext);
   return (
     <article className="product">
       <img src={image} alt={title} />
